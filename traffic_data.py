@@ -1,6 +1,17 @@
 import requests
 import json
+from time import sleep
 
+def getAllTrafficOnRoute(route):
+  total = 0
+  for dict in route:
+    try: 
+        total += getTrafficPerHour(dict['street'], dict['suburb'], 'AM PEAK')
+    except:
+        total += 200
+    sleep(0.2)
+ 
+  return total
 
 def getTrafficPerHour(street, suburb, period):
     '''
