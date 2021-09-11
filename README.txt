@@ -1,1 +1,3 @@
-hi
+setup:
+
+`pip install -U googlemaps` 
