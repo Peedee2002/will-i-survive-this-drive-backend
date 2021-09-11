@@ -12,6 +12,7 @@ def get_suburbs(source, destination):
     directions_result = gmaps.directions(source,
                                         destination,
                                         mode="driving",
+                                        alternatives=True,
                                         departure_time=now)
     all_routes = []
     for d in directions_result:
