@@ -49,6 +49,7 @@ def get_suburbs(source, destination):
 
     return all_routes
 
-# get_suburbs("Chatswood", "Alex Ave, Schofields")
 
-# print(json.dumps(get_suburbs("Chatswood", "Alex Ave, Schofields")))
+# get_suburbs("Chatswood", "Alex Ave, Schofields")
+if __name__ == '__main__':
+    print(json.dumps(get_suburbs("Chatswood", "Alex Ave, Schofields")))

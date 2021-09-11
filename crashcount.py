@@ -5,7 +5,7 @@ def getAllCrashesOnRoute(route):
   total = 0
   for dict in route:
     total += getCrashes(dict['street'], dict['suburb'])
-    sleep(0.2)
+    sleep(0.1)
 
   return total
 
