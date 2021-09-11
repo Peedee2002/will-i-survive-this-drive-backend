@@ -20,9 +20,6 @@ def getTrafficPerHour(street, suburb, period):
     req = requests.get(url,params={'q': query}, headers=headers)
     myjson = json.loads(req.text)
     return myjson["rows"][0]["traffic_count"]
-# print(req)
 
 if __name__ == '__main__':
     print(getTrafficPerHour('Heathcote Road', 'Holsworthy', None))
-#print(req.status_code)
-#print(req.headers)
