@@ -34,28 +34,17 @@ def http_get_suburbs():
     # data['source'] = '29 Riverview Rd, Pleasure Point NSW 2172'
     # data['destination'] = 'Zeus Street Greek Broadway Sydney, 1-21 Bay Street Level 2, Broadway, NSW 2007'
     suburb_data = get_suburbs(str(data['source']), str(data['destination']))
-    # call crashcount here
     information = []
     for route in suburb_data:
         information.append({})
-    
-    '''
-    [
-        {
-            'crashes'
-            'traffic'
-        }
-    ]
-    '''
     for index, route in enumerate(suburb_data):
         information[index]['crashes'] = getAllCrashesOnRoute(route)
         information[index]['traffic'] = getAllTrafficOnRoute(route)
     print(information)
-    
-    answer = map(lambda a: (a['crashes'] * 100000)/a['traffic'], information)
-    # change this return value
+    answer = [*map(lambda a: (a['crashes'] * 100000)/a['traffic'], information)]
     return dumps(answer)
 
     
 if __name__ == "__main__":
-    APP.run(port=0) # Do not edit this port
+    # http_get_suburbs()
+    APP.run(port=8000) # Do not edit this port
