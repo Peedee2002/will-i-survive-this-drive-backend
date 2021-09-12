@@ -5,7 +5,6 @@ def getAllCrashesOnRoute(route):
   total = 0
   for dict in route:
     total += getCrashes(dict['street'], dict['suburb'])
-    sleep(0.1)
 
   return total
 
@@ -19,8 +18,8 @@ def getCrashes(street, suburb):
     "suburb": suburb,
     "street": street,
     "showHistory": True,
-    "created": "2020-10-30",
-    "end": "2020-12-30"
+    "created": "2019-7-1",
+    "end": "2019-9-1"
   }
 
   req = requests.post(url, headers=headers, json=body)

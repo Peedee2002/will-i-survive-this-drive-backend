@@ -9,7 +9,6 @@ def getAllTrafficOnRoute(route):
         total += getTrafficPerHour(dict['street'], dict['suburb'], 'AM PEAK')
     except:
         total += 200
-    sleep(0.1)
  
   return total
 
